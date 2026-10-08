@@ -1,6 +1,6 @@
 import z from "zod"
 
-export const MoviesPopularSchemas = z.object({
+export const MoviesSchemas = z.object({
     id: z.number(),
     title: z.string(),
     overview: z.string(),

@@ -1,5 +1,6 @@
 import z from "zod"
-import { MoviesPopularSchemas, PaginatedResponseSchema } from "../schemas/movies-schemas"
+import { MoviesSchemas, PaginatedResponseSchema } from "../schemas/movies-schemas"
 
-export type Movies = z.infer<typeof MoviesPopularSchemas>
+export type Movies = z.infer<typeof MoviesSchemas>
 export type PaginatedMovies = z.infer<typeof PaginatedResponseSchema>
+export type TimeWindow = "day" | "week" 

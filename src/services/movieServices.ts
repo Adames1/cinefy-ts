@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { MoviesPopularSchemas, PaginatedResponseSchema } from "../schemas/movies-schemas"
+import { MoviesSchemas, PaginatedResponseSchema } from "../schemas/movies-schemas"
+import type { TimeWindow } from "../types/index"
 
-const tmdb = axios.create({
+const tmdbApi = axios.create({
     baseURL: "https://api.themoviedb.org/3",
     headers: {
         Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN_TMDB}`,
@@ -9,10 +10,10 @@ const tmdb = axios.create({
     }
 })
 
-export async function getMoviesPopular(page = 1) {
-    const { data } = await tmdb.get("/movie/popular", {
+export async function getTrendingMovies(timeWindow: TimeWindow = "week", page = 1) {
+    const { data } = await tmdbApi.get(`/trending/movie/${timeWindow}`, {
         params: { page }
     })
 
-    return PaginatedResponseSchema(MoviesPopularSchemas).parse(data)
+    return PaginatedResponseSchema(MoviesSchemas).parse(data)
 }
