@@ -4,7 +4,7 @@ import { routes } from "../routes";
 
 export default function Navbar() {
   return (
-    <aside className="order-2 shrink bg-black w-full h-18 px-4 space-y-6 md:py-4 md:order-1 md:w-24 md:h-screen">
+    <aside className="order-2 shrink bg-black w-full h-18 px-4 space-y-6 border border-t-slate-50/20 md:border-r-slate-50/20 md:py-4 md:order-1 md:w-24 md:h-screen">
       <NavLink to="/" className="hidden md:flex">
         <img src={logo} alt="Cinefy logo" className="mx-auto" />
       </NavLink>
