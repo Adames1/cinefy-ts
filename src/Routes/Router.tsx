@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router";
 import { routes } from ".";
-import { AppLayout } from "../layouts/layout";
+import { AppLayout } from "../layouts/Layout";
 
 export function AppRouter() {
   return (
