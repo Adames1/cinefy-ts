@@ -1,7 +1,10 @@
-import { useTrendingMovie } from "./hooks/useTrendingMovie";
+import { BrowserRouter } from "react-router";
+import { AppRouter } from "./Routes/Router";
 
 export default function App() {
-  const { data } = useTrendingMovie("week", 1);
-
-  return <div>App</div>;
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
